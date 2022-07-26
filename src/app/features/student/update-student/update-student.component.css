@@ -1,0 +1,20 @@
+.container.search {
+    width: 50%;
+}
+button.btn.btn-primary.mb-2 {
+    width: 132px;
+}
+.form-group.row {
+    margin: 15px 0;
+}
+.form-group.button-oneline {
+    float: right;
+}
+input#studentAddress {
+    width: 120%;
+}
+.errormsg {
+    color: red;
+    margin-left: 180px;
+    margin-top: 14px;
+}

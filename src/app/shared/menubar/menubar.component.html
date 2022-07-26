@@ -1,0 +1,16 @@
+<nav style="box-shadow: 0px 0px 10px -4px grey; background-color: #fff !important"
+class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="row align-items-center ">
+  <div class="col-lg-2">
+    <a class="navbar-brand" href="#"> <img src="../assets/images/logo.png" id="logoMenu" class="hello" alt="Logo"></a>
+  </div>
+  <div class="col-lg-6"></div>
+  <div class="col-lg-4">
+    <div class="row align-items-center">
+      <h5 class="welcome">Welcome, {{token}}
+          <a (click)="onLogOut()" class="logoutLink">Logout</a>
+      </h5>
+    </div>
+  </div>
+</div>
+</nav>

@@ -1,0 +1,72 @@
+<div class="container search">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearchStudent()">
+    <div class="row seachfield">
+      <label for="studentCode" class="col-sm-4 col-form-label">Student
+        Code:</label>
+      <div class="col-sm-6">
+        <input type="text" formControlName="studentCode" class="form-control" name="code" maxlength="10">
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="row seachfield">
+      <label for="studentName" class="col-sm-4 col-form-label">Student
+        Name:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="studentName" id="studentName"
+          name="name" maxlength="20">
+      </div>
+      <div class="col-sm-2">
+        <button routerLink="/create-student" type="button"
+          class="btn btn-primary mb-2">Add Student</button>
+      </div>
+    </div>
+    <div class="row seachfield">
+      <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+      <div class="col-sm-6">
+        <input type="date" formControlName="studentBirthDay" class="form-control" id="birthday"
+          name="birthday" maxlength="10">
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <table datatable [dtOptions]="dtOptions" class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Code</th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthday</th>
+          <th scope="col">Address</th>
+          <th scope="col">Score</th>
+          <th scope="col">Edit</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of liststudent; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{student.studentCode}}</td>
+          <td>{{student.studentName}}</td>
+          <td>{{student.dateOfBirth}} </td>
+          <td>{{student.address}}</td>
+          <td>{{student.averageScore}}</td>
+          <td>
+            <div class="row">
+              <div class="col-lg-5">
+                <a (click) = "onUpdateStudent(student.studentId!)" class="editLink">Edit</a>
+              </div>
+              <div class="col-lg-5">
+                <a  (click) = "onDeleteStudent(student.studentId!)"class="deleteLink">Delete</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

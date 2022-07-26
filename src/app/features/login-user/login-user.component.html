@@ -1,0 +1,33 @@
+<div class="container align-middle create-user">
+    <h2 class="justify-content-center">LOGIN</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row seachfield">
+        <label for="username" class="col-sm-4 col-form-label">User Name:</label>
+        <div class="col-sm-8">
+          <input type="text" formControlName="username" class="form-control" name="username" maxlength="20">
+        </div>
+      </div>
+      <div class="row seachfield">
+        <label for="studentName" class="col-sm-4 col-form-label">Password:</label>
+        <div class="col-sm-8">
+          <input type="password" class="form-control" formControlName="password" id="password"
+            name="password" maxlength="15">
+        </div>
+      </div>
+      <div class="errormsg" *ngIf="error !== null">
+        <span>{{error}}</span>
+    </div>
+    <div class="row seachfield">
+        <div class="col-lg-6">
+            <div class="form-group button-oneline">
+                <button type="submit" class="btn btn-primary mb-2">Login</button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <button routerLink="/register" type="button" class="btn btn-primary mb-2">Register</button>
+            </div>
+        </div>
+    </div>
+    </form>
+  </div>

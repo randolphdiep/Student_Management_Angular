@@ -1,0 +1,150 @@
+<!-- <div class="container search">
+    <h3 class="text-center studenttt">STUDENT</h3>
+    <form [formGroup]="editForm">
+        <div class="form-group row">
+            <label for="studentId" class="col-sm-4 col-form-label">Student
+                Id:</label>
+            <div class="col-sm-3">
+                <input formControlName="studentID" [(ngModel)]="student.studentId" type="text" class="form-control" name="id" [readonly]="true">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <div class="form-group row">
+            <label for="studentCode" class="col-sm-4 col-form-label">Student
+                Code:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentCode" [(ngModel)]="student.studentCode" type="text" class="form-control" id="studentCode" name="code" required="required" maxlength="10" [readonly]="true" >
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-primary mb-2" disabled>Generate
+                    Code</button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="studentName" class="col-sm-4 col-form-label">Student
+                Name:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentName" [(ngModel)]="student.studentName" type="text" class="form-control" id="studentName" name="name" required="required" maxlength="20">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="form-group row">
+            <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentBirthDay" [(ngModel)]="student.dateOfBirth" type="date" th:value="${editedStudent.birthday}" class="form-control" id="birthday"
+                    name="birthday" >
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="form-group row">
+            <label for="studentAddress" class="col-sm-4 col-form-label">Address:</label>
+            <div class="col-sm-8">
+                <input formControlName="studentAddress" [(ngModel)]="student.address" type="text" class="form-control" id="studentAddress" name="address" maxlength="255">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="studentAverageScore" class="col-sm-4 col-form-label">Average
+                Score:</label>
+            <div class="col-sm-3">
+                <input formControlName="studentScore" [(ngModel)]="student.averageScore" type="text" class="form-control" pattern="[0-9]+(\.[0-9]{1,2})" id="studentAverageScore"
+                    name="score">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group button-oneline">
+                    <button routerLink="/students" type="button" class="btn btn-primary mb-2">Back</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <button (click)="onUpdateStudent()" type="submit" class="btn btn-primary mb-2">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+<div class="container search">
+    <h3 class="text-center studenttt">STUDENT</h3>
+    <form [formGroup]="editForm">
+        <div class="form-group row">
+            <label for="studentId" class="col-sm-4 col-form-label">Student
+                Id:</label>
+            <div class="col-sm-3">
+                <input formControlName="studentID" type="text" class="form-control" name="id" [readonly]="true">
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+        <div class="form-group row">
+            <label for="studentCode" class="col-sm-4 col-form-label">Student
+                Code:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentCode" type="text" class="form-control" id="studentCode" name="code" [readonly]="true" >
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-primary mb-2" disabled>Generate
+                    Code</button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="studentName" class="col-sm-4 col-form-label">Student
+                Name:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentName" type="text" class="form-control" id="studentName" name="name" required="required" maxlength="20">
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="errormsg" *ngIf="errorName !== null">
+                <span>{{errorName}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+            <div class="col-sm-6">
+                <input formControlName="studentBirthDay" type="date" th:value="${editedStudent.birthday}" class="form-control" id="birthday"
+                    name="birthday" >
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="form-group row">
+            <label for="studentAddress" class="col-sm-4 col-form-label">Address:</label>
+            <div class="col-sm-8">
+                <input formControlName="studentAddress" type="text" class="form-control" id="studentAddress" name="address" maxlength="255">
+            </div>
+            <div class="errormsg" *ngIf="errorAddress!== null">
+                <span>{{errorAddress}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="studentAverageScore" class="col-sm-4 col-form-label">Average
+                Score:</label>
+            <div class="col-sm-3">
+                <input formControlName="studentScore" type="text" class="form-control" pattern="[0-9]+(\.[0-9]{1,2})" id="studentAverageScore"
+                    name="score">
+            </div>
+            <div class="col-sm-5"></div>
+            <div class="errormsg" *ngIf="errorScore !== null">
+                <span>{{errorScore}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group button-oneline">
+                    <button routerLink="/students" type="button" class="btn btn-primary mb-2">Back</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <button (click)="onUpdateStudent()" type="submit" class="btn btn-primary mb-2">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

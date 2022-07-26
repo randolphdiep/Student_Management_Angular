@@ -1,0 +1,28 @@
+img#logoMenu {
+    width: 60%;
+    margin-left: 15px;
+}
+
+.form-control, .form-control:focus, .input-group-addon {
+	border-color: #e1e1e1;
+	border-radius: 0;
+}
+
+
+.align-items-center {
+    align-items: center !important;
+    width: 100% !important;
+}
+
+a.logoutLink {
+	border: none !important;
+	background: none !important;
+	display: inline !important;
+	cursor: pointer !important;
+	color: #007bff !important;
+	font-weight: bold !important;
+}
+
+.row.align-items-center.float-right {
+    margin-right: 12px;
+}

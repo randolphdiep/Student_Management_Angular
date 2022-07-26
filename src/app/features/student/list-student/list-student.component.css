@@ -1,0 +1,39 @@
+a.deleteLink:hover {
+	color: black !important;
+	text-decoration: underline !important;
+}
+
+a.deleteLink {
+	border: none !important;
+	background: none !important;
+	display: inline !important;
+	cursor: pointer !important;
+	color: #e42a20 !important;
+	font-weight: bold !important;
+}
+
+a.editLink:hover {
+	color: black !important;
+	text-decoration: underline !important;
+}
+
+a.editLink {
+	border: none !important;
+	background: none !important;
+	display: inline !important;
+	cursor: pointer !important;
+	color: #007bff !important;
+	font-weight: bold !important;
+}
+
+.container.search {
+	width: 40%;
+	margin-top: 35px;
+}
+
+h3.text-center.studenttt {
+	margin-bottom: 22px;
+}
+.row.seachfield {
+    margin: 15px 0 !important;
+}

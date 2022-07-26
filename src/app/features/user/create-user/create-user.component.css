@@ -1,0 +1,12 @@
+.container.create-user {
+    width: 35%;
+}
+button.btn.btn-primary.mb-2 {
+    width: 100%;
+}
+.row {
+    margin: 15px 0;
+}
+.form-group {
+    margin: 10px 0;
+}

@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+button.btn.btn-primary.mb-2 {
+	background: #e42a20;
+	border: none;
+    width: 260%;
+}
+
+button.btn.btn-primary.mb-2:hover {
+	background: black;
+	border: none;
+}
+div#DataTables_Table_0_paginate {
+	display: flex !important;
+	float: none !important;
+	margin: 15px !important;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    /* color: #333 !important; */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(230, 230, 230, 0.1);
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: #e42a20 !important;
+    outline: none !important;
+    border-radius: 10px;
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    border: none !important;
+    background-color: black !important;
+	border-radius: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    background-color: black !important;
+    background: black !important;
+}
+h2.justify-content-center {
+    display: flex;
+}
+.container.create-user {
+    width: 29%;
+    padding-top: 9%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

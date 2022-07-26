@@ -1,0 +1,75 @@
+<div class="container search">
+    <h3 class="text-center studenttt">STUDENT</h3>
+    <form [formGroup]="createStudentForm" (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+            <label for="studentCode" class="col-sm-4 col-form-label">Student
+                Code:</label>
+            <div class="col-sm-6">
+                <input type="text" formControlName="studentCode" class="form-control" id="studentCode" name="code" [readonly]="true">
+            </div>
+            <div class="col-sm-2">
+                <button (click)="onGenerateCode()" type="button" class="btn btn-primary mb-2">Generate
+                    Code</button>
+            </div>
+            <div class="errormsg" *ngIf="errorCode !== null">
+                <span>{{errorCode}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="studentName" class="col-sm-4 col-form-label">Student
+                Name:</label>
+            <div class="col-sm-6">
+                <input type="text" formControlName="studentName" class="form-control" id="studentName" name="name">
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="errormsg" *ngIf="errorName !== null">
+                <span>{{errorName}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="birthday" class="col-sm-4 col-form-label">Birthday:</label>
+            <div class="col-sm-6">
+                <input type="date" formControlName="studentBirthDay" class="form-control" id="birthday"
+                    name="birthday">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="form-group row">
+            <label for="studentAddress" class="col-sm-4 col-form-label">Address:</label>
+            <div class="col-sm-8">
+                <input type="text" formControlName="studentAddress" class="form-control" id="studentAddress" name="address" maxlength="255">
+            </div>
+            <div class="errormsg" *ngIf="errorAddress !== null">
+                <span>{{errorAddress}}</span>
+            </div>
+            <!-- <div class="col-sm-2"></div> -->
+        </div>
+        <div class="form-group row">
+            <label for="studentAverageScore" class="col-sm-4 col-form-label">Average
+                Score:</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" formControlName="studentScore" pattern="[0-9]+(\.[0-9]{1,2})" id="studentAverageScore"
+                    name="score">
+            </div>
+            <div class="col-sm-5"></div>
+            <div class="errormsg" *ngIf="errorScore !== null">
+                <span>{{errorScore}}</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group button-oneline">
+                    <button (click)="goToListStudent()" type="button" class="btn btn-primary mb-2">Back</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb-2">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
